@@ -1,0 +1,224 @@
+.App {
+    font-family: sans-serif;
+  }
+  .home {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+  }
+  
+  .tag-multidropdown-box {
+    font-size: 1rem;
+    background-color: #fff;
+    border: 1px solid #dadbdc;
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: 8px 10px 8px 10px;
+    transition: all 200ms ease;
+    width: 100%; /* Use a percentage to make it responsive */
+  
+    border-radius: 5px;
+    cursor: pointer;
+  
+    display: flex;
+    flex-direction: column; /* Change to a column layout */
+  }
+  
+  .tag-search_container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    .tag_container {
+      background-color: #dadce0;
+      border-radius: 16px;
+      height: 30px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      .tag-text {
+        margin-top: revert;
+        padding-right: 10px;
+        padding-left: 5px;
+        font-size: 16px;
+        color: black;
+      }
+      .tag-item-close {
+        transition: all 500ms ease;
+        border-radius: 50%;
+        height: 27px;
+        width: 27px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+          background-color: white;
+        }
+      }
+    }
+    .search_image {
+      height: 18px;
+      width: 18px;
+      font-size: 16px;
+    }
+    .tag-search_input {
+      outline: none;
+      border: none;
+      height: auto; /* Allow the input to take up as much height as it needs */
+      font-size: 15px;
+      margin-top: 5px; /* Add some top margin to separate from the search image */
+      width: 100%; /* Use 100% width to take the full width available */
+      &::placeholder {
+        color: #bec1c4;
+      }
+    }
+  }
+  
+  .tag-search_input::placeholder {
+    color: #dadce0;
+  }
+  .tag-multidropdown-box.active {
+    line-height: 1.5;
+    font-size: 1rem;
+    background-color: #fff;
+    border: 1px solid #408dfb;
+    // background: #f2f2ff;
+    // outline: none;
+  
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: 8px 10px 8px 10px;
+    transition: all 200ms ease;
+    width: 415px;
+  
+    height: auto;
+    border-radius: 5px;
+    cursor: pointer;
+  
+    display: flex;
+    justify-content: space-between;
+    .value {
+      text-align: left;
+      position: absolute;
+      top: -8px;
+      color: black;
+    }
+    .placeholder {
+      text-align: left;
+      position: absolute;
+      top: -8px;
+      color: #dcdcdc;
+    }
+  }
+  
+  .tag-dropdownselect-form {
+    position: relative;
+    color: #333;
+    cursor: default;
+    // width: 300px;
+    border-radius: 5px;
+  }
+  
+  .tag-dropdownselect-form .arrow.open {
+    border-color: transparent transparent #dadce0;
+    border-width: 0 5px 5px;
+  }
+  
+  .tag-dropdownselect-form .tag-options {
+    display: none;
+    background-color: #fff;
+    border: 1px solid #dadce0;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    margin-top: 10px;
+    max-height: 275px;
+    // overflow-y: auto;
+    position: absolute;
+    top: 100%;
+    z-index: 3;
+    width: 415px;
+    // padding: 7px;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+  }
+  
+  .tag-dropdownselect-form .tag-options.open {
+    display: block;
+    margin-top: 5px;
+    border-radius: 5px;
+    // border-top-left-radius: 5px;
+    // border-top-right-radius: 5px;
+  }
+  
+  .tag-dropdownselect-form .option {
+    box-sizing: border-box;
+    color: rgba(51, 51, 51, 0.8);
+    cursor: pointer;
+    display: block;
+    padding: 8px 10px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+  
+  .tag-dropdownselect-form .option.selected {
+    background-color: #e8f0fe;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // .selected_text {
+    //   color: black;
+    // }
+  }
+  .selected_text {
+    color: black;
+    border: 1px solid #dadce0;
+    display: inline;
+    // padding-left: 5px;
+    // padding-right: 5px;
+    border-radius: 14px;
+    // padding: 3px;
+    font-size: 14px;
+  }
+  .tag-dropdownselect-form .option:hover {
+    // background-color: #e8f0fe;
+    background-color: #f0f6fa;
+    border-radius: 5px;
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-between;
+    // .selected_text {
+    //   color: black;
+    // }
+  }
+  .loader {
+    height: 40px;
+  }
+  .nodata {
+    color: rgba(51, 51, 51, 0.8);
+    font-weight: 400;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .tag-option_container {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    overflow-y: auto;
+    max-height: 176px;
+  }
+  .mutlidropdown-tag-circle-container {
+    flex-wrap: wrap;
+    display: flex;
+    .mutlidropdown-tag-circle {
+      cursor: pointer;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      border: 1px solid #dadce0;
+    }
+  }
+  
