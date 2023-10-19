@@ -263,6 +263,22 @@ const CustomSearchableDropdown = (props) => {
       setIsOpen(true);
     }
   }, [query]);
+
+  const handleAddNewTag = (name, colorCode) => {
+    data.push({
+      name: name.toLowerCase(),
+      colorCode: colorCode,
+      id: data.length,
+      label: name,
+    });
+    setData([...data]);
+    handleClickOption({
+      name: name.toLowerCase(),
+      colorCode: colorCode,
+      id: data.length,
+      label: name,
+    });
+  };
   return (
     <>
       <div className={"tag-dropdownselect-form"} ref={ref}>
@@ -375,18 +391,21 @@ const CustomSearchableDropdown = (props) => {
                 })
               ) : (
                 <div>
-                  <p>Hint: Select one of the colors below to add a tag.</p>
                   {query ? (
-                    <div className="mutlidropdown-tag-circle-container">
-                      {colorCodes.map((item) => {
-                        return (
-                          <div
-                            className="mutlidropdown-tag-circle"
-                            style={{ background: item }}
-                          ></div>
-                        );
-                      })}
-                    </div>
+                    <>
+                      <p>Hint: Select one of the colors below to add a tag.</p>
+                      <div className="mutlidropdown-tag-circle-container">
+                        {colorCodes.map((item) => {
+                          return (
+                            <div
+                              className="mutlidropdown-tag-circle"
+                              style={{ background: item }}
+                              onClick={() => handleAddNewTag(query, item)}
+                            ></div>
+                          );
+                        })}
+                      </div>
+                    </>
                   ) : (
                     <div className="nodata">No Tags Found</div>
                   )}

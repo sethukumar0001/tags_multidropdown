@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import CustomSearchableDropdown from "./CustomDropdown";
 import { getValue } from "./lodash";
+import CustomSearchableDropdown from "./CustomDropdown";
 
 function App(props) {
   const [values, setValues] = useState([]);
@@ -20,7 +20,7 @@ function App(props) {
         label={"label"}
         values={values}
         onChange={handleSelectChange}
-        width={'480px'}
+        width={'450px'}
       />
     </div>
   );
